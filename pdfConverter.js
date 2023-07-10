@@ -1,5 +1,4 @@
 const chromium = require('chrome-aws-lambda');
-const { response } = require('express');
 const puppeteer = require('puppeteer-core');
 
 async function convert_html_string_to_pdf(html_string) {
@@ -13,6 +12,7 @@ async function convert_html_string_to_pdf(html_string) {
   });
   // const browser = await puppeteer.launch();
 
+  console.log("convert_html_string_to_pdf ======");
   // Create a new page
   const page = await browser.newPage();
   await page.setContent(html_string, { waitUntil: 'networkidle0' });
@@ -37,7 +37,7 @@ async function convert_html_string_to_pdf(html_string) {
     body: pdf.toString('base64'),
     isBase64Encoded: true
   }
-  console.log("response" , response );
+  // console.log("response" , response );
 
   await browser.close();  
 }
