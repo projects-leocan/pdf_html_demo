@@ -11,8 +11,6 @@ async function convert_html_string_to_pdf(html_string) {
     headless: chromium.headless
   });
   // const browser = await puppeteer.launch();
-
-  console.log("convert_html_string_to_pdf ======");
   // Create a new page
   const page = await browser.newPage();
   await page.setContent(html_string, { waitUntil: 'networkidle0' });
