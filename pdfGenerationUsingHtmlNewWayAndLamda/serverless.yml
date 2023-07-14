@@ -1,0 +1,14 @@
+service: my-pdf-service
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: your-region
+
+functions:
+  generatePdfAndUpload:
+    handler: handler.generatePdfAndUpload
+    events:
+      - http:
+          path: generate-pdf
+          method: get

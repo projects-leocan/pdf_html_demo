@@ -1,0 +1,27 @@
+service: my-pdf-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-central-1
+
+functions:
+  pdf:
+    handler: handler.pdf
+    events:
+      - http:
+          path: pdf
+          method: get
+
+
+# service: helloworld
+# frameworkVersion: "3"
+
+# provider:
+#   name: aws
+#   runtime: nodejs18.x
+#   region: eu-central-1
+
+# functions:
+#   hello:
+#     handler: handler.hello

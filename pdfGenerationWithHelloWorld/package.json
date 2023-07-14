@@ -1,0 +1,18 @@
+{
+  "name": "pdfgenerationwithhelloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node handler.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer": "^20.8.2",
+    "puppeteer-core": "^10.1.0"
+  }
+}
