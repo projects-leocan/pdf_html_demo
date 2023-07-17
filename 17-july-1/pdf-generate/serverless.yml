@@ -1,0 +1,27 @@
+org: jhon1234
+app: pdf-generate
+service: pdf-generate
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-2
+
+functions:
+  function1:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: GET
+
+  anotherFunction:   # New function definition
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /genrerate-pdf-using-html
+          method: GET
+
+plugins:
+  - serverless-offline
